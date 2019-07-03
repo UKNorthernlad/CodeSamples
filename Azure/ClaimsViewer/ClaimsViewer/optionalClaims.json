@@ -1,0 +1,12 @@
+﻿{
+  "optionalClaims": {
+    "idToken": [
+      {
+        "name": "extension_10e17971-a54c-406b-8a0b-4e13014ec6be_givenname",
+        "source": "user",
+        "essential": false,
+        "additionalProperties": []
+      }
+    ]
+  }
+}

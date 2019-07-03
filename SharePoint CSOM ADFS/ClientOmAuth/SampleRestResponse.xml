@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<feed xml:base="https://fc1/_vti_bin/listdata.svc/" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
+	<title type="text">Contacts</title>
+	<id>https://fc1/_vti_bin/listdata.svc/Contacts/</id>
+	<updated>2010-09-25T14:16:56Z</updated>
+	<link rel="self" title="Contacts" href="Contacts" />
+	<entry m:etag="W/&quot;1&quot;">
+		<id>https://fc1/_vti_bin/listdata.svc/Contacts(1)</id>
+		<title type="text">Peschka</title>
+		<updated>2010-09-24T16:03:07-07:00</updated>
+		<author>
+			<name />
+		</author>
+		<link rel="edit" title="ContactsItem" href="Contacts(1)" />
+		<link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/CreatedBy" type="application/atom+xml;type=entry" title="CreatedBy" href="Contacts(1)/CreatedBy" />
+		<link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ModifiedBy" type="application/atom+xml;type=entry" title="ModifiedBy" href="Contacts(1)/ModifiedBy" />
+		<link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Attachments" type="application/atom+xml;type=feed" title="Attachments" href="Contacts(1)/Attachments" />
+		<category term="Microsoft.SharePoint.DataService.ContactsItem" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<content type="application/xml">
+			<m:properties>
+				<d:Id m:type="Edm.Int32">1</d:Id>
+				<d:ContentTypeID>0x0106003310ED85589F044E96358B975F3381CB</d:ContentTypeID>
+				<d:ContentType>Contact</d:ContentType>
+				<d:LastName>Peschka</d:LastName>
+				<d:Modified m:type="Edm.DateTime">2010-09-24T16:03:07</d:Modified>
+				<d:Created m:type="Edm.DateTime">2010-09-24T16:03:07</d:Created>
+				<d:CreatedById m:type="Edm.Int32">1</d:CreatedById>
+				<d:ModifiedById m:type="Edm.Int32">1</d:ModifiedById>
+				<d:Owshiddenversion m:type="Edm.Int32">1</d:Owshiddenversion>
+				<d:Version>1.0</d:Version>
+				<d:Path>/Lists/Contacts</d:Path>
+				<d:FirstName>Steve</d:FirstName>
+				<d:FullName>Steve Peschka</d:FullName>
+				<d:EMailAddress>stevep@peschka.gov</d:EMailAddress>
+				<d:Company>Microsoft</d:Company>
+				<d:JobTitle>Architect</d:JobTitle>
+				<d:BusinessPhone m:null="true" />
+				<d:HomePhone m:null="true" />
+				<d:MobileNumber m:null="true" />
+				<d:FaxNumber m:null="true" />
+				<d:Address m:null="true" />
+				<d:City m:null="true" />
+				<d:StateProvince m:null="true" />
+				<d:ZIPPostalCode m:null="true" />
+				<d:CountryRegion m:null="true" />
+				<d:WebPage>http://www.microsoft.com, http://www.microsoft.com</d:WebPage>
+				<d:Notes>&lt;div&gt;&lt;/div&gt;</d:Notes>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="W/&quot;1&quot;">
+		<id>https://fc1/_vti_bin/listdata.svc/Contacts(2)</id>
+		<title type="text">Phandusky</title>
+		<updated>2010-09-24T16:04:40-07:00</updated>
+		<author>
+			<name />
+		</author>
+		<link rel="edit" title="ContactsItem" href="Contacts(2)" />
+		<link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/CreatedBy" type="application/atom+xml;type=entry" title="CreatedBy" href="Contacts(2)/CreatedBy" />
+		<link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ModifiedBy" type="application/atom+xml;type=entry" title="ModifiedBy" href="Contacts(2)/ModifiedBy" />
+		<link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Attachments" type="application/atom+xml;type=feed" title="Attachments" href="Contacts(2)/Attachments" />
+		<category term="Microsoft.SharePoint.DataService.ContactsItem" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<content type="application/xml">
+			<m:properties>
+				<d:Id m:type="Edm.Int32">2</d:Id>
+				<d:ContentTypeID>0x0106003310ED85589F044E96358B975F3381CB</d:ContentTypeID>
+				<d:ContentType>Contact</d:ContentType>
+				<d:LastName>Phandusky</d:LastName>
+				<d:Modified m:type="Edm.DateTime">2010-09-24T16:04:40</d:Modified>
+				<d:Created m:type="Edm.DateTime">2010-09-24T16:04:40</d:Created>
+				<d:CreatedById m:type="Edm.Int32">1</d:CreatedById>
+				<d:ModifiedById m:type="Edm.Int32">1</d:ModifiedById>
+				<d:Owshiddenversion m:type="Edm.Int32">1</d:Owshiddenversion>
+				<d:Version>1.0</d:Version>
+				<d:Path>/Lists/Contacts</d:Path>
+				<d:FirstName>Phil</d:FirstName>
+				<d:FullName>Phil Phandusky</d:FullName>
+				<d:EMailAddress>philp@phando.local</d:EMailAddress>
+				<d:Company>PhandoRamics</d:Company>
+				<d:JobTitle>Software Engineer</d:JobTitle>
+				<d:BusinessPhone m:null="true" />
+				<d:HomePhone m:null="true" />
+				<d:MobileNumber m:null="true" />
+				<d:FaxNumber m:null="true" />
+				<d:Address m:null="true" />
+				<d:City m:null="true" />
+				<d:StateProvince m:null="true" />
+				<d:ZIPPostalCode m:null="true" />
+				<d:CountryRegion m:null="true" />
+				<d:WebPage m:null="true" />
+				<d:Notes>&lt;div&gt;&lt;/div&gt;</d:Notes>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="W/&quot;1&quot;">
+		<id>https://fc1/_vti_bin/listdata.svc/Contacts(3)</id>
+		<title type="text">Johndeski</title>
+		<updated>2010-09-24T16:05:50-07:00</updated>
+		<author>
+			<name />
+		</author>
+		<link rel="edit" title="ContactsItem" href="Contacts(3)" />
+		<link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/CreatedBy" type="application/atom+xml;type=entry" title="CreatedBy" href="Contacts(3)/CreatedBy" />
+		<link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ModifiedBy" type="application/atom+xml;type=entry" title="ModifiedBy" href="Contacts(3)/ModifiedBy" />
+		<link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Attachments" type="application/atom+xml;type=feed" title="Attachments" href="Contacts(3)/Attachments" />
+		<category term="Microsoft.SharePoint.DataService.ContactsItem" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<content type="application/xml">
+			<m:properties>
+				<d:Id m:type="Edm.Int32">3</d:Id>
+				<d:ContentTypeID>0x0106003310ED85589F044E96358B975F3381CB</d:ContentTypeID>
+				<d:ContentType>Contact</d:ContentType>
+				<d:LastName>Johndeski</d:LastName>
+				<d:Modified m:type="Edm.DateTime">2010-09-24T16:05:50</d:Modified>
+				<d:Created m:type="Edm.DateTime">2010-09-24T16:05:50</d:Created>
+				<d:CreatedById m:type="Edm.Int32">1</d:CreatedById>
+				<d:ModifiedById m:type="Edm.Int32">1</d:ModifiedById>
+				<d:Owshiddenversion m:type="Edm.Int32">1</d:Owshiddenversion>
+				<d:Version>1.0</d:Version>
+				<d:Path>/Lists/Contacts</d:Path>
+				<d:FirstName>Juno</d:FirstName>
+				<d:FullName>Juno Johndeski</d:FullName>
+				<d:EMailAddress>junoj@dotrilumus.local</d:EMailAddress>
+				<d:Company>Dotrilumus Plant Supplies</d:Company>
+				<d:JobTitle>Account Manager</d:JobTitle>
+				<d:BusinessPhone m:null="true" />
+				<d:HomePhone m:null="true" />
+				<d:MobileNumber m:null="true" />
+				<d:FaxNumber m:null="true" />
+				<d:Address m:null="true" />
+				<d:City m:null="true" />
+				<d:StateProvince m:null="true" />
+				<d:ZIPPostalCode m:null="true" />
+				<d:CountryRegion m:null="true" />
+				<d:WebPage m:null="true" />
+				<d:Notes>&lt;div&gt;&lt;/div&gt;</d:Notes>
+			</m:properties>
+		</content>
+	</entry>
+</feed>

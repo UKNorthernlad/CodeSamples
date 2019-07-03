@@ -1,0 +1,3 @@
+id,deviceId,readingTime,metricType,unit,metricValue
+wibble,XMS-0001,2017-11-14T11:38:17.1134019Z,Temperature,Celsius,35
+stuff,XMS-0001,2013-10-13T10:32:45.4869361Z,Temperature,Celsius,40

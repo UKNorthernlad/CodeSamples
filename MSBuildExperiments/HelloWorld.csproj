@@ -1,0 +1,59 @@
+
+<!-- Taken from https://docs.microsoft.com/en-gb/visualstudio/msbuild/walkthrough-creating-an-msbuild-project-file-from-scratch -->
+<!-- Main MSBuild documentation: https://docs.microsoft.com/en-gb/visualstudio/msbuild/msbuild -->
+<!-- To understand how MSBuild is integrated into Visual Studio: https://docs.microsoft.com/en-gb/visualstudio/msbuild/visual-studio-integration-msbuild -->
+
+<!-- TODO: common targets file (microsoft.common.targets)  -->
+
+<!-- TODO: common tasks file (microsoft.common.tasks) -->
+
+
+<!-- To run type:-
+        msbuild HelloWorld.csproj /target:Build /p:AssemblyName=blah
+        -->
+
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+        
+    <!-- 
+    You can include/import stuff from other files using Import.
+       <Import Project="full path to other msbuild file" />
+    E.g. this is used to pull in many standard property definitions used by Visual Studio ....
+       <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    and this is used to perform the core complile target along with many pre/post compile targets which can be overridden in a project's .csproj file.
+       <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />   
+    -->
+
+    <!-- Properties can be called anything you want. Access them via $(SomePropertyName). Optionally pass them in from the command line. -->
+    <PropertyGroup>
+      <AssemblyName>MSBuildSample</AssemblyName>  
+      <OutputPath>bin\</OutputPath>  
+    </PropertyGroup> 
+
+    <!-- Items are the things you want to work on. Here is a single item called CompileBlah - the name whatever makes sense to you -->
+    <ItemGroup>
+      <CompileBlah Include="helloworld.cs" />  
+    </ItemGroup>  
+ 
+    <!-- The Inputs and Ouputs on Target ensure this only gets run if the inputs and outputs have changed since last run -->
+    <Target Name="Build" Inputs="@(CompileBlah)" Outputs="$(OutputPath)$(AssemblyName).exe">
+      <MakeDir Directories="$(OutputPath)" Condition="!Exists('$(OutputPath)')" />  
+      
+    <!-- Use @(SomeItemGroupName) to carry a Task out against that group of items-->
+    <Csc Sources="@(CompileBlah)" OutputAssembly="$(OutputPath)$(AssemblyName).exe">
+      <!-- Here we create a new item group from the value of something else -->
+      <!-- E.g. Take the value produced dynamically in the OutputAssembly and make a new Item called EXEFile -->
+      <!-- https://docs.microsoft.com/en-gb/visualstudio/msbuild/output-element-msbuild -->
+      <Output TaskParameter = "OutputAssembly" ItemName = "EXEFile" />  
+    </Csc>
+
+      <Message Text="The output file is @(EXEFile)"/> 
+
+    </Target> 
+
+    <Target Name="Clean" >  
+      <Delete Files="$(OutputPath)$(AssemblyName).exe" />  
+    </Target> 
+
+    <Target Name="Rebuild" DependsOnTargets="Clean;Build" />  
+
+</Project>  

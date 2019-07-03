@@ -1,0 +1,11 @@
+﻿{
+  "frameworks": {
+    "net46": {
+      "dependencies": {
+        "EntityFramework": "6.1.3",
+        "WindowsAzure.Storage": "8.0.1",
+        "Microsoft.WindowsAzure.ConfigurationManager": "3.2.3"
+      }
+    }
+  }
+}
