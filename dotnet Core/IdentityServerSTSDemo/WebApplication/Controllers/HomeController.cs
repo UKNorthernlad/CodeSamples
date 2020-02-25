@@ -10,7 +10,6 @@ using WebApplication.Models;
 
 namespace WebApplication.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -21,6 +20,12 @@ namespace WebApplication.Controllers
         }
 
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult Login()
         {
             return View();
         }
