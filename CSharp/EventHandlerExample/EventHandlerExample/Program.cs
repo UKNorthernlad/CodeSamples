@@ -49,12 +49,20 @@ namespace EventHandlerExample
         {
             // Gets a reference to any methods (aka delegatges) which are attached and listening for events.
             EventHandler handler = DataChanged;
+            handler?.Invoke(this, e);
 
-            if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday)
-            {
-                // Providing we have at least one event listener attached, go-ahead and invoke it, passing in a reference to the object that raised the event + any data (EventArgs e) that it might want.
-                handler?.Invoke(this, e);
-            }            
+            //// Once upon a time, you might have see the above written as:
+            //if (DataChanged != null) //i.e we have some listeners for the event.
+            //{
+            //    DataChanged(this, e); // call delegate chain.
+            //}
+
+            //// You can set logic to decide if despite the event happening, wether the delegate chain should be called.
+            //if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday)
+            //{
+            //    // Providing we have at least one event listener attached, go-ahead and invoke it, passing in a reference to the object that raised the event + any data (EventArgs e) that it might want.
+            //    handler?.Invoke(this, e);
+            //}
         }
 
     }
