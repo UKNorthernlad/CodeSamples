@@ -11,12 +11,20 @@ namespace EventHandlerExample
             s.SetData("newvalue");
 
             // When data is changed in the object "s", it raises an event which calls DataUpdate and passes in any relevent data.
-            s.DataChanged += DataUpdate;
+            s.DataChanged += DataUpdate; // Call a named method "DataUpdate" to handle the event.
+           //s.DataChanged += new EventHandler(DataUpdate); // An older way of writing the above line.
+
+            //// This is the "modern" way - an line delegage - no need for a separate DateUpdate method to clutter up the code.
+            ////Note the anonymous method signature still requires the same parameters as the standlone DateUpdate method.
+            //s.DataChanged += delegate (object sender, EventArgs e)
+            //{
+            //    Console.WriteLine("*EventRaised* - A change was made to the object.");
+            //};
 
             s.SetData("anothervalue");
         }
 
-        // The Event handler code.
+        // The Event handler code - only gets called once when defining the s.DataChanged handler above.
         private static void DataUpdate(object sender, EventArgs e)
         {
             Console.WriteLine("*EventRaised* - A change was made to the object.");
