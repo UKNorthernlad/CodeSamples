@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioMessageGenerator", "src\RadioMessageGenerator.csproj", "{23619351-37A2-4657-9AE5-BD967BF9D207}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioMessageGenerator", "RadioMessageGenerator\RadioMessageGenerator.csproj", "{23619351-37A2-4657-9AE5-BD967BF9D207}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
