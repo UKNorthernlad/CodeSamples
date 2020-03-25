@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Authentication.WsFederation;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 
-namespace WebApplication2
+namespace WebApplication
 {
     public class Startup
     {

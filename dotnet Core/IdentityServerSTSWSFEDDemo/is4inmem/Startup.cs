@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Xml;
 using System;
 using System.Collections.Generic;
@@ -67,7 +68,16 @@ namespace is4inmem
             builder.AddInMemoryIdentityResources(Config.Ids);
             builder.AddInMemoryApiResources(Config.Apis);
             builder.AddInMemoryClients(Config.Clients);
-            builder.AddSigningCredential(GetCertificateFromStore("CN=sign"));
+            try
+            {
+                builder.AddSigningCredential(GetCertificateFromStore("CN=sign"));
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Signing certificate not found in LocalMachine personal store. Has the 'CreateSigningKey.ps1' script from the 'is4inmem' project been run?");
+            }
+            
             builder.AddWsFederationPlugin(options =>
             {
                 // DefaultClaimMapping maps OpenID format claim types to SAML suitable claim types. Claim types not defined in the mapping will not be included in generated SAML tokens.
@@ -92,12 +102,9 @@ namespace is4inmem
                 //options.WsFederationEndpoint = "wsfed";
             });
             builder.AddInMemoryRelyingParties(Config.RelyingParties);
-
             builder.AddInMemoryIdentityResources(Config.Ids);
             builder.AddInMemoryApiResources(Config.Apis);
             builder.AddInMemoryClients(Config.Clients);
-
-
             // not recommended for production - you need to store your key material somewhere secure
             //builder.AddDeveloperSigningCredential();
         }

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using WebApplication2.Models;
+using WebApplication.Models;
 
-namespace WebApplication2.Controllers
+namespace WebApplication.Controllers
 {
 
     public class HomeController : Controller
