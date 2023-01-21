@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNetCore.Authentication
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>This example uses WS-FED to authenticate with IS4 which is configured with AzureAD as an external identity provider. Make sure you update the AzureAD configuration settings in the IdentityServer4 appsettings.json file.</p>
+</div>
+
+<div>
+    @if (User.Identity.IsAuthenticated)
+    {
+
+        <h2>Claims</h2>
+
+        <dl>
+
+            @foreach (var claim in User.Claims)
+            {
+                <dt>@claim.Type</dt>
+                <dd>
+                    @foreach (var value in claim.Value)
+                     {
+                          @value
+                     }
+                 </dd>
+            }
+        </dl>
+
+        <h2>Properties</h2>
+
+        <dl>
+            @foreach (var prop in (await Context.AuthenticateAsync()).Properties.Items)
+            {
+                <dt>@prop.Key</dt>
+                <dd>@prop.Value</dd>
+            }
+        </dl>
+    }
+</div>

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>aspnet-VideoAdmin-53D56A43-9838-4D14-BB64-184AB28567B5</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.11" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.11" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="1.18.0" />
+    <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.18.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+    <h3>@ViewBag.UserLoggedInMessage</h3>
+
+    <p>Here are your claims:</p>
+
+
+    @foreach (var claim in User.Claims)
+    {
+        <strong>@claim.Type</strong>
+        @: =
+        @claim.Value;
+        @: <br />
+    }
+
+
+
+
+
+</div>

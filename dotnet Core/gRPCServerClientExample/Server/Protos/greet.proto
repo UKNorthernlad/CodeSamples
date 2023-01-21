@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServiceExample";
+
+package greet;
+
+// This is the protobuf file - it's basically the service definition.
+// From this, the tooling creates base classes for client, server & messages etc.
+// In this example the file is located in the Server project but referenced from the Client.
+// This means you only need to update in one place.
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply);
+  //rpc SpeakMessage (HelloRequest) returns (HelloReply);
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message HelloReply {
+  string message = 1;
+  int32 length = 2;
+  
+}

@@ -1,0 +1,81 @@
+<!--
+* This is a hand written msbuild .csproj file that does not rely on Visual Studio "targets" files. All targets are created and called explicitly.
+* Taken from https://docs.microsoft.com/en-gb/visualstudio/msbuild/walkthrough-creating-an-msbuild-project-file-from-scratch
+* Main MSBuild documentation: https://docs.microsoft.com/en-gb/visualstudio/msbuild/msbuild
+
+ To build sample application:
+    msbuild.exe HelloWorld.csproj /target:Build /p:AssemblyName=blah
+    
+  -->
+
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  
+  <!--
+  To understand how MSBuild is integrated into Visual Studio: https://docs.microsoft.com/en-gb/visualstudio/msbuild/visual-studio-integration-msbuild
+  
+  You can include/import stuff from other files using Import:
+  
+    <Import Project="full path to other msbuild file" />
+    
+   E.g. This is used to pull in many standard property definitions used by Visual Studio:
+   
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+   
+   E.g. This is used to perform the core complile target along with many pre/post compile targets which can be overridden in a .csproj file:
+       
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />   
+    
+    TODO: common targets file (microsoft.common.targets)
+    TODO: common tasks file (microsoft.common.tasks)
+  -->
+  
+  <!--
+  * A PropertyGroup contains "Properties" which act like variables.
+  * You are free to name these as you need, e.g. MyOwnProperty
+  * Some Properties or entire PropertyGroups are created by tools such as Visual Studio to track state or enable/disable features in the IDE.
+  * Access Propeties elsewhere using the syntax $(SomePropertyName).
+  * Optionally pass them in from the command line.
+  * You can create multiple PropertyGroups to make grouping of related Properties more obvious but behind the scenes, all are seen as one large PropertyGroup.
+  -->
+  <PropertyGroup>
+    <AssemblyName>HelloWorld</AssemblyName>
+    <OutputPath>bin\</OutputPath>
+    <MyOwnProperty>Some value</MyOwnProperty>
+  </PropertyGroup>
+
+  <!--
+  * An ItemGroup contains Items which are (usually) the names of files you want to compile. 
+  * There can be multipe items with the name name  (e.g. CompileBlah) which makes them act like an array of items
+  * The name of the item is whatever makes sense to you.
+  -->
+  <ItemGroup>
+    <CompileBlah Include="helloworld.cs" />
+    <CompileBlah Include="printmessage.cs" />
+  </ItemGroup>
+
+  <!--
+  * A Target is a named group of individual Tasks that must be run to complete the build.
+  * A Target is skipped if the values of the Inputs and Outputs parameters have not changed since last run of the Target.
+  * There are many Tasks provided by MSBuild to meet build requirements (e.g. MakeDir, Csc or Message) but custom tasks can also be used.
+  -->
+  <Target Name="Build" Inputs="@(CompileBlah)" Outputs="$(OutputPath)$(AssemblyName).exe">
+    <MakeDir Directories="$(OutputPath)" Condition="!Exists('$(OutputPath)')" />
+    <!-- Here the C# Compiler Task (Csc) is used to compile an array of items defined previously -->
+    <Csc Sources="@(CompileBlah)" OutputAssembly="$(OutputPath)$(AssemblyName).exe">
+      <!-- Here we create a new item group from the value of something else -->
+      <!-- E.g. Take the value produced dynamically in the OutputAssembly and make a new Item called EXEFile -->
+      <!-- https://docs.microsoft.com/en-gb/visualstudio/msbuild/output-element-msbuild -->
+      <Output TaskParameter = "OutputAssembly" ItemName = "EXEFile" />
+    </Csc>
+    <Message Text="The output file is @(EXEFile)"/>
+
+  </Target>
+
+  <Target Name="Clean" >
+    <Delete Files="$(OutputPath)$(AssemblyName).exe" />
+  </Target>
+
+  <Target Name="Rebuild" DependsOnTargets="Clean;Build">
+  </Target>
+
+</Project>

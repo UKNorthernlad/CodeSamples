@@ -1,0 +1,33 @@
+# This is a sample pod definition for using SecretProviderClass and the user-assigned identity to access your key vault
+kind: Pod
+apiVersion: v1
+metadata:
+  name: busybox-secrets-store-inline-user-msi
+spec:
+  containers:
+    - name: busybox
+      image: k8s.gcr.io/e2e-test-images/busybox:1.29-1
+      command:
+        - "/bin/sleep"
+        - "10000"
+      env:
+# Here we create an environment variable called SECRET_USERNAME with its value coming from the "myappsecrets" secret object and key with-in that called "secretKey".
+      - name: SECRET_USERNAME
+        valueFrom:
+          secretKeyRef:
+            key: secretKey
+            name: myappsecrets
+# This is where the KeyVault in mapped into the Pod.
+      volumeMounts:
+      - name: secrets-store01-inline
+        mountPath: "/mnt/secrets-store"
+        readOnly: true
+# This defines the volumes and where the data is from.
+# Note the reference to the secretProviderClass
+  volumes:
+    - name: secrets-store01-inline
+      csi:
+        driver: secrets-store.csi.k8s.io
+        readOnly: true
+        volumeAttributes:
+          secretProviderClass: "azure-kvname-user-msi"

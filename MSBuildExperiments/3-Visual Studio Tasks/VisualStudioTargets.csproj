@@ -1,0 +1,35 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <!--
+  To understand how MSBuild is integrated into Visual Studio: https://docs.microsoft.com/en-gb/visualstudio/msbuild/visual-studio-integration-msbuild
+  
+  You can include/import stuff from other files using Import:
+  
+    <Import Project="full path to other msbuild file" />
+    
+   E.g. This is used to pull in many standard property definitions used by Visual Studio:
+   
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+   
+   E.g. This is used to perform the core complile target along with many pre/post compile targets which can be overridden in a .csproj file:
+       
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />   
+    
+    TODO: common targets file (microsoft.common.targets)
+    TODO: common tasks file (microsoft.common.tasks)
+  -->
+  <PropertyGroup>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ProjectGuid>{A98B4EA1-487B-488D-8EA6-6C0269A14582}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <AvailableItemName Include="JScript" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="stuff\HTMLPage1.html" />
+  </ItemGroup>
+  <ItemGroup />
+</Project>

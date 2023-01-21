@@ -1,0 +1,41 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Here we include the reference to the which contains a custom task -->
+  <UsingTask AssemblyFile="..\CustomBuildTasks\bin\Debug\net472\CustomBuildTasks.dll" TaskName="DoCoolThing" />
+
+  <PropertyGroup>
+    <AssemblyName>MSBuildSample</AssemblyName>
+    <OutputPath>bin\</OutputPath>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <CompileBlah Include="helloworld.cs" />
+  </ItemGroup>
+
+  <Target Name="Build" Inputs="@(CompileBlah)" Outputs="$(OutputPath)$(AssemblyName).exe">
+    <MakeDir Directories="$(OutputPath)" Condition="!Exists('$(OutputPath)')" />
+
+    <Csc Sources="@(CompileBlah)" OutputAssembly="$(OutputPath)$(AssemblyName).exe">
+      <Output TaskParameter="OutputAssembly" ItemName="EXEFile" />
+    </Csc>
+
+    <Message Text="The output file is @(EXEFile)" />
+    
+    <!-- Call our custom build task -->
+    <DoCoolThing Message="Hi from the DoCoolThing custom build task." >
+        <Output TaskParameter="TheDate" ItemName="ReturnedTheDate"/>
+    </DoCoolThing>
+
+    <Message Text="The returned date is @(ReturnedTheDate)" />
+
+  </Target>
+
+  <Target Name="Clean">
+    <Delete Files="$(OutputPath)$(AssemblyName).exe" />
+  </Target>
+
+  <Target Name="Rebuild" DependsOnTargets="Clean;Build">
+  </Target>
+
+</Project>

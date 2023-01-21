@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookieAuthentication", "CookieAuthentication\CookieAuthentication.csproj", "{756DDCEA-7532-4D6F-93DB-7BFF43FD6013}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JWTAuthentication", "JWTAuthentication\JWTAuthentication.csproj", "{FE0DA6FF-D45F-4B5D-A7E3-2B86A2493D16}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureADAuthentication", "AzureADAuthentication\AzureADAuthentication.csproj", "{FC547186-DA66-45D5-A887-03649016904C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIClient", "WebAPIClient\WebAPIClient.csproj", "{9EEA2453-C1E9-4A62-AF1E-1D17675B7983}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiWithBearerTokenAuth", "WebApiWithBearerTokenAuth\WebApiWithBearerTokenAuth.csproj", "{310302B8-BE72-4FFD-8090-209655BE71CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureAD for Client App talking to WebAPI", "AzureAD for Client App talking to WebAPI", "{7A6290B3-2267-4428-B69E-92679DC779A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JWT Token with Custom Validation", "JWT Token with Custom Validation", "{51F37227-1E88-4F22-887E-9C0C902572EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureAD for Frontend WebApp", "AzureAD for Frontend WebApp", "{7BE2A7CC-8FF1-48EC-BF9A-1197C5030146}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cookies", "Cookies", "{28E54C9D-AC30-4C5A-AD21-99EA8DD37EDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{756DDCEA-7532-4D6F-93DB-7BFF43FD6013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{756DDCEA-7532-4D6F-93DB-7BFF43FD6013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{756DDCEA-7532-4D6F-93DB-7BFF43FD6013}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{756DDCEA-7532-4D6F-93DB-7BFF43FD6013}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE0DA6FF-D45F-4B5D-A7E3-2B86A2493D16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE0DA6FF-D45F-4B5D-A7E3-2B86A2493D16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE0DA6FF-D45F-4B5D-A7E3-2B86A2493D16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE0DA6FF-D45F-4B5D-A7E3-2B86A2493D16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC547186-DA66-45D5-A887-03649016904C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC547186-DA66-45D5-A887-03649016904C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC547186-DA66-45D5-A887-03649016904C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC547186-DA66-45D5-A887-03649016904C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EEA2453-C1E9-4A62-AF1E-1D17675B7983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EEA2453-C1E9-4A62-AF1E-1D17675B7983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EEA2453-C1E9-4A62-AF1E-1D17675B7983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EEA2453-C1E9-4A62-AF1E-1D17675B7983}.Release|Any CPU.Build.0 = Release|Any CPU
+		{310302B8-BE72-4FFD-8090-209655BE71CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{310302B8-BE72-4FFD-8090-209655BE71CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{310302B8-BE72-4FFD-8090-209655BE71CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{310302B8-BE72-4FFD-8090-209655BE71CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{756DDCEA-7532-4D6F-93DB-7BFF43FD6013} = {28E54C9D-AC30-4C5A-AD21-99EA8DD37EDA}
+		{FE0DA6FF-D45F-4B5D-A7E3-2B86A2493D16} = {51F37227-1E88-4F22-887E-9C0C902572EE}
+		{FC547186-DA66-45D5-A887-03649016904C} = {7BE2A7CC-8FF1-48EC-BF9A-1197C5030146}
+		{9EEA2453-C1E9-4A62-AF1E-1D17675B7983} = {7A6290B3-2267-4428-B69E-92679DC779A7}
+		{310302B8-BE72-4FFD-8090-209655BE71CB} = {7A6290B3-2267-4428-B69E-92679DC779A7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35B7A21E-E975-4931-991D-0A531DB4531D}
+	EndGlobalSection
+EndGlobal

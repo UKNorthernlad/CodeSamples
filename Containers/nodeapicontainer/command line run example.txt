@@ -1,0 +1,7 @@
+docker build -t demoapi:latest .
+docker run -p 8080:8080 demoapi:latest
+
+wget -O- --header "Ocp-Apim-Subscription-Key: XXXXXXXXXXXXXXXXXXXXXXXXXXX" https://myapim.azure-api.net/users/listusers
+
+
+

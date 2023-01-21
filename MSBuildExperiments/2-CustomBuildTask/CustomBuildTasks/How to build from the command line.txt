@@ -1,0 +1,11 @@
+This is a Visual Studio .csproj which uses the VS targets to compile the CustomBuildTasks class, so you shouldn't expect to see explicitly defined Targets.
+
+To compile this example from the command line:
+
+1. Run msbuild.exe to perform a NuGet restore and create the required metadata files in the /obj folder:
+    
+      msbuild /target:restore
+
+2. Compile the class library from the command line:
+
+      msbuild

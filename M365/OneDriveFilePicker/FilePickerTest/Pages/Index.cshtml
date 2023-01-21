@@ -1,0 +1,43 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<script type="text/javascript" src="https://js.live.net/v7.2/OneDrive.js"></script>
+
+<script>
+
+    var odOptions = {
+        clientId: "<clientID-guid>",
+        action: "share",
+        multiSelect: true,
+        advanced: {},
+        success: function (files) {
+
+            console.log(files.value[0].webUrl);
+            var result = document.getElementById("result");
+            result.innerHTML = files.value[0].webUrl;
+        },
+        cancel: function () { /* cancel handler */ },
+        error: function (error) { /* error handler */ }
+    }
+
+</script>
+
+
+<script type="text/javascript">
+    function launchOneDrivePicker() {
+        OneDrive.open(odOptions);
+    }
+</script>
+
+<button onClick="launchOneDrivePicker()">Open from OneDrive</button>
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div id="result"></div>

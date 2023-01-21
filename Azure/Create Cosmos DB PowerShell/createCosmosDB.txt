@@ -1,0 +1,11 @@
+$ResourceGroup = "NotificationProcessing"
+$location = "eastus2"
+$cosmosDbAccountName = "xyznotifications"
+$databaseName = "callAudit"
+$containerName = "callRecords"
+
+New-AzResourceGroup -Name $ResourceGroup -Location $location -Force
+New-AzCosmosDBAccount -Name $cosmosDbAccountName -Location $location -ResourceGroup $ResourceGroup
+$account = Get-AzCosmosDBAccount -Name $cosmosDbAccountName -ResourceGroup $ResourceGroup
+$database = New-AzCosmosDBSqlDatabase -ParentObject $account -Name $databaseName
+New-AzCosmosDBSqlContainer -ParentObject $database -Name $containerName -PartitionKeyKind "Hash" -PartitionKeyPath "/id"
