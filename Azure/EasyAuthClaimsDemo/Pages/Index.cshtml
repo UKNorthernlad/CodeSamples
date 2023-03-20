@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<p>
+    <ul>
+        <li><a href="/.auth/login/aad">Log in with the Microsoft Identity Platform</a></li>
+        <li><a href="/.auth/login/facebook">Log in with Facebook</a></li>
+        <li><a href="/.auth/login/google">Log in with Google</a></li>
+        <li><a href="/.auth/login/twitter">Log in with Twitter</a></li>
+        <li><a href="/.auth/login/apple">Log in with Apple</a></li>
+        <li><a href="/.auth/logout">Logout</a></li>
+        <li></li>
+        <li><a href="/.auth/me">Me (view your access token)</a></li>
+        <li><a target="documentation" href="https://learn.microsoft.com/en-us/azure/app-service/configure-authentication-customize-sign-in-out">Read documentation on how to customise the login/logout experience.</a></li>
+        
+    </ul>
+</p>
+
+
+<h2>You have the following claims:</h2>
+@Html.Raw(Model.ClaimsList)
+<b>End of list</b>
+
+
+<h2>You have the following headers:</h2>
+@Html.Raw(Model.HeadersList)
+<b>End of list</b>
