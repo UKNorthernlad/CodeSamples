@@ -15,6 +15,9 @@
 // Turn off the generation of stack cookies/canaries.
 //    Project Properties->Configuration Properties->C / C++-> Code Generation -> Security Check ===== Disable Security Check /GS, i.e. /GS-
 
+// X64 assembly starter guide - https://www.intel.com/content/dam/develop/external/us/en/documents/introduction-to-x64-assembly-181178.pdf
+// X64 assembly reference guide - https://www.intel.com/content/www/us/en/content-details/782149/intel-64-and-ia-32-architectures-software-developer-s-manual-volume-1-basic-architecture.html?wapkw=ia32
+
 #include <stdio.h>
 #include <string.h>
 
@@ -23,7 +26,7 @@
 
 void function2()
 {
-	// 0x00000001400117e0
+	// 0x00000001400117d0
 	puts("This is the stuff which should never run");
 }
 
@@ -38,7 +41,7 @@ void function1()
 	
 	// The Ret address might be different when you build the source - be prepared to update it.
 	//      Buf   Src                                                                                EBP                                RET to function2()                       
-	strncpy(foo, "AAAAAAAABBBBBBBBCCCCCCCCDDDDDDDDEEEEEEEEFFFFFFFFGGGGGGGGHHHHHHHHIIIIIIIIJJJJJJJJ" "\x01\x02\x03\x04\x05\x06\x07\x08" "\xa0\x17\x01\x40\x01\x00\x00\x00", 96);
+	strncpy(foo, "AAAAAAAABBBBBBBBCCCCCCCCDDDDDDDDEEEEEEEEFFFFFFFFGGGGGGGGHHHHHHHHIIIIIIIIJJJJJJJJ" "\x01\x02\x03\x04\x05\x06\x07\x08" "\xd0\x17\x01\x40\x01\x00\x00\x00", 96);
 }
 
 int main(int argc, char* argv[])
