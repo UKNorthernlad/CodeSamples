@@ -23,7 +23,7 @@ void printLocalPointer()
     printf("Message is              = %s \n", letter);
     printf("Message memory location = %p \n\n", letter);
 
-    letter = letter + 252;
+    letter = letter + 252; // Add a random few extra bytes
     printf("Message is              = %s \n", letter);
     printf("Message memory location = %p \n\n", letter);
 }
