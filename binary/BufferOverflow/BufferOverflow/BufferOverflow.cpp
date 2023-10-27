@@ -29,7 +29,7 @@
 
 void function2()
 {
-	// 0x00000001400117d0
+	// 0x 00 00 00 01 40 01 17 d0
 	puts("This is the stuff which should never run");
 }
 
@@ -42,7 +42,7 @@ void function1()
 	// However only 50h bytes of those are actually used (which is why Src below is 80 bytes long.)
 	// This must be for some important alignment related stuff for efficency etc.
 
-	PVOID bufferLocation = foo;
+	//PVOID bufferLocation = foo;
 
 	// The Ret address might be different when you build the source - be prepared to update it.
 	// strncpy will copy the source string into the destination buffer but will terminate on a null source byte. Remaining bytes in the destination are filled with nulls.
@@ -60,9 +60,9 @@ int main(int argc, char* argv[])
 {
 	puts("Starting in Main!");
 
-	// Start start and finish addressess (normally 3 x 4k pages).
-	PVOID stackBase = NtCurrentTeb()->NtTib.StackBase;
-	PVOID stackLimit = NtCurrentTeb()->NtTib.StackLimit;
+	//// Start start and finish addressess (normally 3 x 4k pages).
+	//PVOID stackBase = NtCurrentTeb()->NtTib.StackBase;
+	//PVOID stackLimit = NtCurrentTeb()->NtTib.StackLimit;
 
 	function1();
 
